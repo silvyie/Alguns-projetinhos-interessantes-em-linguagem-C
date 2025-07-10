@@ -75,6 +75,7 @@ int main(){
             break;
         case 3:
             sair_do_programa();
+            exit(1);
         default:
             printf("Opcao invalida\n");
             break;
