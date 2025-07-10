@@ -29,7 +29,20 @@ void adicionar_tarefa(Tarefa lista[], int *cont_tarefas){
 
 }
 
-void listar_tarefas(){
+void listar_tarefas(Tarefa lista[], int *cont_tarefas) {
+
+  printf("Voce tem essas tarefas na sua lista de tarefas: \n");
+    if (*cont_tarefas == 0) {
+        printf("Sua lista de tarefas esta vazia!\n");
+
+        return;
+    }
+        for(int i = 0; i < *cont_tarefas; i++) {
+        printf("%s\n", lista[i].nome_materia);
+        printf("Materia: %s\n Descricao: %s\n Data: %s\n", lista[i].nome_materia, lista[i].descricao_tarefa, lista[i].data);
+    }
+
+    printf("=============================================\n");
 
 }
 
@@ -58,7 +71,7 @@ int main(){
             adicionar_tarefa(lista, &cont_tarefas);
             break;
         case 2:
-            listar_tarefas();
+            listar_tarefas(lista, &cont_tarefas);
             break;
         case 3:
             sair_do_programa();
